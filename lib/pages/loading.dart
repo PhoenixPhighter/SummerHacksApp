@@ -26,16 +26,26 @@ class _LoadingState extends State<Loading> with SingleTickerProviderStateMixin {
         child: Center(
             child: Stack(
           children: <Widget>[
-            Dot(
-              radius: 30.0,
-              color: Colors.blueAccent,
+            Center(
+              child: Dot(
+                radius: 30.0,
+                color: Colors.blueAccent,
+              ),
             ),
             Transform.translate(
-                offset: Offset(radius * cos(pi), radius * sin(pi)),
-                child: Dot(
-                  radius: 5.0,
-                  color: Colors.blue,
-                ))
+              offset: Offset(radius * cos(pi), radius * sin(pi)),
+              child: Dot(
+                radius: 10.0,
+                color: Colors.blue,
+              ),
+            ),
+            Transform.translate(
+              offset: Offset(radius * cos(pi / 4), radius * sin(pi / 4)),
+              child: Dot(
+                radius: 10.0,
+                color: Colors.red,
+              ),
+            ),
           ],
         )),
       ),
